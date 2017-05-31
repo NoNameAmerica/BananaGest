@@ -1,4 +1,7 @@
-package com.NoName.modelos;
+/*
+ * @author: Arismar y gabriel
+ */
+package com.noname.modelos;
 
 public class Proyecto {
 	protected int idProyecto;

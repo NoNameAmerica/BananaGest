@@ -1,13 +1,10 @@
-/**
+/*
  * @author: Arismar y gabriel
  */
 package com.noname.controlador;
 
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -38,10 +35,10 @@ public class login_servlet extends HttpServlet {
 		// Recojo los valores del formulario que viene en request del metodo get().
 		String user = request.getParameter("email");
 		String pwd = request.getParameter("pass");
-		Usuario miUser = new Usuario();
+		Usuario miUser = new Usuario(user, pwd);
 		// Si es usuario abrir sesion
 
-		if (EsUsuario(user, pwd)) {
+		if (miUser.EsUsuario(user, pwd)) {
 			// Crear una sesion
 			HttpSession misession = request.getSession(true);
 			misession.setAttribute("user", userId);
@@ -59,24 +56,6 @@ public class login_servlet extends HttpServlet {
 		}
 	}
 
-	private boolean EsUsuario(String email, String password) {
-		Pattern regex = Pattern.compile("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b");
-		Matcher matcher = regex.matcher(email);
-		if (matcher.matches()){
-			if (email.equals("Ricardo@j.es") && password.equals("ricard")) {
-				userId = 1;
-				return true;
-			}
-			if (email.equals("Juana@j.es") && password.equals("juana")) {
-				userId = 2;
-				return true;
-			}
-			if (email.equals("luis@j.es") && password.equals("lluis")) {
-				userId = 3;
-				return true;
-			}
-		}
-		return false;
-	}
+
 
 }
