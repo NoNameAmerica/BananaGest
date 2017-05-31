@@ -7,25 +7,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Usuario {
-	protected int IdUser;
+	protected int idUser;
 	public String Nombre;
-	public String Apellido_Primero;
-	public String Apellido_Segundo;
-	public String Email;
+	public String apellido_Primero;
+	public String apellido_Segundo;
+	public String email;
 	protected String contarseña;
-	public String Foto;
-	public String Video;
+	public String foto;
+	public String video;
 
 	//Construcctor para usuario logeandose
 	public Usuario(String email, String contarseña) {
 		super();
-		this.IdUser=0;
+		this.idUser=0;
 		this.Nombre="";
-		this.Apellido_Primero="";
-		this.Apellido_Segundo="";
-		this.Foto="";
-		this.Video="";
-		this.Email = email;
+		this.apellido_Primero="";
+		this.apellido_Segundo="";
+		this.foto="";
+		this.video="";
+		this.email = email;
 		this.contarseña = contarseña;
 	}
 
@@ -35,30 +35,30 @@ public class Usuario {
 		Matcher matcher = regex.matcher(email);
 		if (matcher.matches()){
 			if (email.equals("Ricardo@j.es") && password.equals("ricard")) {
-				this.IdUser = 1;
+				this.idUser = 1;
 				this.Nombre="Ricardo";
-				this.Apellido_Primero="Tejero";
-				this.Apellido_Segundo="Sanchez";
-				this.Foto="/img/edwin.jpg";
-				this.Video="";
+				this.apellido_Primero="Tejero";
+				this.apellido_Segundo="Sanchez";
+				this.foto="/img/edwin.jpg";
+				this.video="";
 				return true;
 			}
 			if (email.equals("Juana@j.es") && password.equals("juana")) {
-				this.IdUser = 2;
+				this.idUser = 2;
 				this.Nombre="Juana";
-				this.Apellido_Primero="Gutierrez";
-				this.Apellido_Segundo="";
-				this.Foto="/img/gabriel.jpg";
-				this.Video="";
+				this.apellido_Primero="Gutierrez";
+				this.apellido_Segundo="";
+				this.foto="/img/gabriel.jpg";
+				this.video="";
 				return true;
 			}
 			if (email.equals("luis@j.es") && password.equals("lluis")) {
-				this.IdUser = 3;
+				this.idUser = 3;
 				this.Nombre="Luis";
-				this.Apellido_Primero="Fernanded";
-				this.Apellido_Segundo="";
-				this.Foto="/img/aismar.jpg.jpg";
-				this.Video="";			
+				this.apellido_Primero="Fernanded";
+				this.apellido_Segundo="";
+				this.foto="/img/aismar.jpg.jpg";
+				this.video="";			
 				return true;
 			}
 		}
