@@ -20,7 +20,7 @@
     </header>
     <section>
         <p>Acceso de Usuario</p>
-        <form id="formlogin" action="bananagest.html" method="GET" novalidate>
+        <form id="formlogin" action="login_servlet" method="post" novalidate>
 
             <div>
                 <span id="err_1" class="oculto error">El formato del email no es correcto</span>
@@ -48,8 +48,7 @@
     </section>
 
 </body>
-<script src="js/login.js"></script>
+<script src="scripts/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="bootstrap-3.3.7-dist\js\bootstrap.js"></script>
-
+<!-- script src="bootstrap-3.3.7-dist\js\bootstrap.js"></script>  -->
 </html>

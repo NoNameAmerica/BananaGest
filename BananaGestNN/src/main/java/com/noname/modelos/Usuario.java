@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Usuario {
 	protected int idUser;
-	public String Nombre;
+	public String nombre;
 	public String apellido_Primero;
 	public String apellido_Segundo;
 	public String email;
@@ -20,7 +20,7 @@ public class Usuario {
 	public Usuario(String email, String contarseña) {
 		super();
 		this.idUser=0;
-		this.Nombre="";
+		this.nombre="";
 		this.apellido_Primero="";
 		this.apellido_Segundo="";
 		this.foto="";
@@ -36,28 +36,28 @@ public class Usuario {
 		if (matcher.matches()){
 			if (email.equals("Ricardo@j.es") && password.equals("ricard")) {
 				this.idUser = 1;
-				this.Nombre="Ricardo";
+				this.nombre="Ricardo";
 				this.apellido_Primero="Tejero";
 				this.apellido_Segundo="Sanchez";
-				this.foto="/img/edwin.jpg";
+				this.foto="img/edwin.jpg";
 				this.video="";
 				return true;
 			}
 			if (email.equals("Juana@j.es") && password.equals("juana")) {
 				this.idUser = 2;
-				this.Nombre="Juana";
+				this.nombre="Juana";
 				this.apellido_Primero="Gutierrez";
-				this.apellido_Segundo="";
-				this.foto="/img/gabriel.jpg";
+				this.apellido_Segundo="Lopez";
+				this.foto="img/gabriel.jpg";
 				this.video="";
 				return true;
 			}
 			if (email.equals("luis@j.es") && password.equals("lluis")) {
 				this.idUser = 3;
-				this.Nombre="Luis";
-				this.apellido_Primero="Fernanded";
-				this.apellido_Segundo="";
-				this.foto="/img/aismar.jpg.jpg";
+				this.nombre="Luis";
+				this.apellido_Primero="Fernandez";
+				this.apellido_Segundo="Garcia";
+				this.foto="img/aismar.jpg";
 				this.video="";			
 				return true;
 			}
