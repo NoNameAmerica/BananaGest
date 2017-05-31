@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +28,8 @@ public class login_servlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("email", "");
 		request.setAttribute("pass", "");
-		doPost(request, response);
+		response.sendRedirect("login.jsp");
+		//doPost(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,12 +43,17 @@ public class login_servlet extends HttpServlet {
 			// Crear una sesion
 			HttpSession misession = request.getSession(true);
 			misession.setAttribute("user", userId);
-			request.getRequestDispatcher("login.jsp");
+			// Crear la cookie
+			Cookie loginCookie = new Cookie("user",user);
+			loginCookie.setMaxAge(30*60);
+			response.addCookie(loginCookie);
+			request.getRequestDispatcher("bananagest.jsp");
 			//RequestDispatcher rd = getServletContext().getRequestDispatcher("login.jsp");
 			// response.getWriter().append("Served at: ").append(request.getContextPath());
 		} else {
 			// Indicar el error y recargar el login
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("login.jsp");
+			//RequestDispatcher rd = getServletContext().getRequestDispatcher("login.jsp");
+			response.sendRedirect("login.jsp");
 		}
 	}
 
