@@ -8,25 +8,25 @@ import java.util.regex.Pattern;
 
 public class Usuario {
 	protected int idUser;
-	private String nombre;
-	private String apellido_primero;
-	private String apellido_segundo;
-	private String email;
+	public String nombre;
+	public String apellido_Primero;
+	public String apellido_Segundo;
+	public String email;
 	protected String contraseña;
-	private String foto;
-	private String video;
+	public String foto;
+	public String video;
 
 	// Construcctor para usuario logeandose
-	public Usuario(String email, String contarseña) {
+	public Usuario(String email, String contraseña) {
 		super();
-		this.idUser = 0;
-		this.nombre = "";
-		this.apellido_primero = "";
-		this.apellido_segundo = "";
-		this.foto = "";
-		this.video = "";
+		this.idUser=0;
+		this.nombre="";
+		this.apellido_Primero="";
+		this.apellido_Segundo="";
+		this.foto="";
+		this.video="";
 		this.email = email;
-		this.contraseña = contraseña;
+		this.setContraseña(contraseña);
 	}
 
 	public int getIdUser() {
@@ -54,39 +54,39 @@ public class Usuario {
 	}
 
 	public String getApellido_Primero() {
-		return apellido_primero;
+		return this.apellido_Primero;
 	}
 
 	public void setApellido_Primero(String apellido_Primero) {
-		this.apellido_primero = apellido_primero;
+		this.apellido_Primero = apellido_Primero;
 	}
 
 	public String getapellido_primero() {
-		return apellido_segundo;
+		return this.apellido_Segundo;
 	}
 
 	public void setApellido_Segundo(String apellido_Segundo) {
-		this.apellido_segundo = apellido_Segundo;
+		this.apellido_Segundo = apellido_Segundo;
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	private String getContarseña() {
-		return contraseña;
+	private String getContraseña() {
+		return this.contraseña;
 	}
 
-	public void setContarseña(String contarseña) {
-		this.contraseña = contarseña;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 
 	public String getFoto() {
-		return foto;
+		return this.foto;
 	}
 
 	public void setFoto(String foto) {
@@ -94,7 +94,7 @@ public class Usuario {
 	}
 
 	public String getVideo() {
-		return video;
+		return this.video;
 	}
 
 	public void setVideo(String video) {
@@ -107,29 +107,29 @@ public class Usuario {
 		if (matcher.matches()) {
 			if (email.equals("Ricardo@j.es") && password.equals("ricard")) {
 				this.idUser = 1;
-				this.nombre = "Ricardo";
-				this.apellido_primero = "Tejero";
-				this.apellido_segundo = "Sanchez";
-				this.foto = "/img/edwin.jpg";
-				this.video = "";
+				this.nombre="Ricardo";
+				this.apellido_Primero="Tejero";
+				this.apellido_Segundo="Sanchez";
+				this.foto="img/edwin.jpg";
+				this.video="";
 				return true;
 			}
 			if (email.equals("Juana@j.es") && password.equals("juana")) {
 				this.idUser = 2;
-				this.nombre = "Juana";
-				this.apellido_primero = "Gutierrez";
-				this.apellido_segundo = "";
-				this.foto = "/img/gabriel.jpg";
-				this.video = "";
+				this.nombre="Juana";
+				this.apellido_Primero="Gutierrez";
+				this.apellido_Segundo="Lopez";
+				this.foto="img/gabriel.jpg";
+				this.video="";
 				return true;
 			}
 			if (email.equals("luis@j.es") && password.equals("lluis")) {
 				this.idUser = 3;
-				this.nombre = "Luis";
-				this.apellido_primero = "Fernanded";
-				this.apellido_segundo = "";
-				this.foto = "/img/aismar.jpg.jpg";
-				this.video = "";
+				this.nombre="Luis";
+				this.apellido_Primero="Fernandez";
+				this.apellido_Segundo="Garcia";
+				this.foto="img/aismar.jpg";
+				this.video="";			
 				return true;
 			}
 		}
