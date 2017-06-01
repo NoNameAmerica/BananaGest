@@ -19,12 +19,12 @@ public class Usuario {
 	// Construcctor para usuario logeandose
 	public Usuario(String email, String contraseña) {
 		super();
-		this.idUser=0;
-		this.nombre="";
-		this.apellido_Primero="";
-		this.apellido_Segundo="";
-		this.foto="";
-		this.video="";
+		this.idUser = 0;
+		this.nombre = "";
+		this.apellido_Primero = "";
+		this.apellido_Segundo = "";
+		this.foto = "";
+		this.video = "";
 		this.email = email;
 		this.setContraseña(contraseña);
 	}
@@ -33,7 +33,7 @@ public class Usuario {
 		return idUser;
 	}
 
-	private void setIdUser(int idUser) {
+	protected void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
 
@@ -42,47 +42,80 @@ public class Usuario {
 	}
 
 	public boolean setNombre(String nombre) {
-		Pattern pat = Pattern.compile(".*abc.*");
-	     Matcher mat = pat.matcher(nombre);
-	     if (mat.matches()) {
-	    	 this.nombre = nombre;
-	    	 return true;
-	     } else {
-	    	 this.nombre = "";
-	    	 return false;
-	     }		
+		Pattern pat = Pattern.compile("[A-Za-z\\s]{3,}");
+		Matcher mat = pat.matcher(nombre);
+		if (mat.matches()) {
+			this.nombre = nombre;
+			return true;
+		} else {
+			this.nombre = "";
+			return false;
+		}
 	}
 
-	public String getApellido_Primero() {
+	public String getApellido_Primero() {	
 		return this.apellido_Primero;
 	}
-
-	public void setApellido_Primero(String apellido_Primero) {
-		this.apellido_Primero = apellido_Primero;
+			
+	public boolean setApellido_Primero(String apePri) {		
+		 Pattern pat = Pattern.compile("[A-Za-z\\s]{3,}");
+	     Matcher mat = pat.matcher(apePri);
+	     if (mat.matches()) {
+	    	 this.apellido_Primero = apePri;
+	    	 return true;
+	     } else {
+	    	 this.apellido_Primero = "";
+	    	 return false; 	 
+	     }
 	}
 
-	public String getapellido_primero() {
-		return this.apellido_Segundo;
+	public String getApellido_Segundo() {
+		return apellido_Segundo;
 	}
 
-	public void setApellido_Segundo(String apellido_Segundo) {
-		this.apellido_Segundo = apellido_Segundo;
+	public boolean setApellido_Segundo(String apeSeg) {
+		 Pattern pat = Pattern.compile("[A-Za-z\\s]{3,}");
+	     Matcher mat = pat.matcher(apeSeg);
+	     if (mat.matches()) {
+	    	 this.apellido_Segundo = apeSeg;
+	    	 return true;
+	     } else {
+	    	 this.apellido_Segundo = "";
+	    	 return false; 	 
+	     }
 	}
-
+	
 	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public boolean setEmail(String email) {
+   	 	Pattern regex = Pattern.compile("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b");
+		Matcher matcher = regex.matcher(email);
+	     if (matcher.matches()) {
+	    	 this.apellido_Primero = email;
+	    	 return true;
+	     } else {
+	    	 this.apellido_Primero = "";
+	    	 return false; 	 
+	     }
 	}
 
-	private String getContraseña() {
+	protected String getContraseña() {
 		return this.contraseña;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	private boolean setContraseña(String contraseña) {
+		Pattern regex = Pattern.compile("[A-Za-z1-2]{4,}");
+		Matcher matcher = regex.matcher(email);
+	    if (matcher.matches()) {
+	    	this.contraseña = contraseña;
+	    	return true;
+	    } else {
+	    	this.contraseña = "";
+	    	return false; 	 
+	    }
+		
 	}
 
 	public String getFoto() {
@@ -101,10 +134,11 @@ public class Usuario {
 		this.video = video;
 	}
 
+	
 	public boolean EsUsuario(String email, String password) {
 		Pattern regex = Pattern.compile("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b");
 		Matcher matcher = regex.matcher(email);
-		if (matcher.matches()) {
+		if (matcher.matches()){
 			if (email.equals("Ricardo@j.es") && password.equals("ricard")) {
 				this.idUser = 1;
 				this.nombre="Ricardo";
@@ -135,5 +169,4 @@ public class Usuario {
 		}
 		return false;
 	}
-
 }
