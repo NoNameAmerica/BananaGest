@@ -1,0 +1,73 @@
+div p {
+    text-align: center;
+    font-family: Baskerville Old Face;
+    font-size: 25px;
+}
+
+.ho:hover {
+    background-color: #b3b3b3;
+    border-color: #8e8e8e;
+    /*set the color you want here*/
+}
+
+
+/* Por encima de 450px */
+
+@media screen and (min-width: 450px) and (max-width: 729px) {
+    .Aparece {
+        display: block;
+        font-size: 15px;
+    }
+    .DesP {
+        display: none;
+    }
+    .DesT {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 730px) {
+    .Aparece {
+        display: block;
+        font-size: 18px;
+    }
+    .DesP {
+        display: none;
+    }
+    .DesT {
+        display: none;
+    }
+}
+
+
+/* Por debajo de 450px */
+
+@media screen and (max-width: 450px) {
+    .Aparece {
+        display: none;
+    }
+    .DesP {
+        display: block;
+        font-size: 19px;
+    }
+    .DesT {
+        display: block;
+        font-size: 17px;
+    }
+}
+
+@media print {
+    .Aparece {
+        display: block;
+        font-size: 15px;
+    }
+    .DesP {
+        display: none;
+    }
+    .DesT {
+        display: none;
+    }
+    .dropdown-menu {
+        display: none;
+    }
+}

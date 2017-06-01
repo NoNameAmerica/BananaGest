@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Banana Gest</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -50,5 +50,6 @@
 </body>
 <script src="scripts/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- script src="bootstrap-3.3.7-dist\js\bootstrap.js"></script>  -->
 </html>

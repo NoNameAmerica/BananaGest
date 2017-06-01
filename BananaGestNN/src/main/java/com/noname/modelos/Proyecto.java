@@ -7,8 +7,12 @@ public class Proyecto {
 	protected int idProyecto;
 	public String titulo;
 	public String descripcion;
+	public String fechaIni;
+	public String fechaFin;
+	public int idUsuario;
+	
 	public int getIdProyecto() {
-		return idProyecto;
+		return this.idProyecto;
 	}
 
 	public void setIdProyecto(int idProyecto) {
@@ -16,7 +20,7 @@ public class Proyecto {
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return this.titulo;
 	}
 
 	public void setTitulo(String titulo) {
@@ -24,7 +28,7 @@ public class Proyecto {
 	}
 
 	public String getDescripcion() {
-		return descripcion;
+		return this.descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
@@ -32,7 +36,7 @@ public class Proyecto {
 	}
 
 	public String getFechaIni() {
-		return fechaIni;
+		return this.fechaIni;
 	}
 
 	public void setFechaIni(String fechaIni) {
@@ -40,7 +44,7 @@ public class Proyecto {
 	}
 
 	public String getFechaFin() {
-		return fechaFin;
+		return this.fechaFin;
 	}
 
 	public void setFechaFin(String fechaFin) {
@@ -48,21 +52,23 @@ public class Proyecto {
 	}
 
 	public int getIdUsuario() {
-		return idUsuario;
+		return this.idUsuario;
 	}
 
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
-	public String fechaIni;
-	public String fechaFin;
-	public int idUsuario;
 
-	public Proyecto() {
-		
+	public void getProyecto(int idProyecto) {
+		if (idProyecto==1){ 
+			this.setIdProyecto(idProyecto);
+			this.titulo="Reforma Plaza Cataluña";
+			this.descripcion="El ayuntamiento de Barcelona pide raformar la plaza cataluña";
+			this.fechaIni="01/01/2016";
+			this.fechaFin="31/12/2017";
+			this.idUsuario=1;
+		}	
 	}
-
-	
 
 }
